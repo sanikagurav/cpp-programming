@@ -1,0 +1,73 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Geometry
+{
+    public : void area();
+             void area(int side);
+             void area(int length,int breadth);
+             void area(int radius,float pi);
+};
+void Geometry::area()
+{
+    cout << "\nI belong to Geometry Family";
+}
+void Geometry::area(int side)
+{
+    int area;
+    area=side*side;
+    cout << "\n Area of squre : " << area;
+}
+void Geometry::area(int length,int breadth)
+{
+    int area;
+    area=length*breadth;
+    cout << "\n Area of rectangle : "<< area;
+}
+void Geometry::area(int radius,float pi)
+{
+    float area;
+    area=pi*radius*radius;
+    cout << "\n Area of circle : " << area;
+}
+int main()
+{
+    int side,length,breadth,radius,choice=0;
+    float pi=3.14;
+    Geometry G;
+
+    while(choice<5)
+    {
+        cout << "\n1)Area" << endl;
+        cout << "2)Area of squre :" << endl;
+        cout << "3)Area of rectangle :" << endl;
+        cout << "4)Area of circle :" << endl;
+        cout << "5)Exit"
+        cout << "Enter your choice : " << endl;
+        cin >> choice;
+
+        switch(choice)
+        {
+        case 1:
+               G.area();
+               break;
+        case 2:cout << "\nEnter side of squre : ";
+               cin >> side;
+               G.area(side);
+               break;
+        case 3:cout << "\nEnter length and breadth : ";
+               cin >> length;
+               cin >> breadth;
+               G.area(length,breadth);
+               break;
+        case 4:cout << "\nEnter radius of circle : ";
+               cin >> radius;
+               G.area(radius,pi);
+               break;
+        default:cout << "\nMake proper choice";
+
+        }
+    }
+    return 0;
+}
