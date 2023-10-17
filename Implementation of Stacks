@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define size 3 
+class Stack
+{
+	int top;
+	int stack_arr[size];
+	public:
+		Stack()
+		{
+			top=0;
+		}
+		void push(int value);
+		void pop();
+		void peek();
+}; 
