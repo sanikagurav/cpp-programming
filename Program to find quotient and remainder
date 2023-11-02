@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+
+// Function to find quotient and remainder
+void findQuotientAndRemainder(int a, int b)
+{
+    // Find quotient and remainder
+    int quotient = a / b;
+    int remainder =  a % b;
+
+
+    cout<<"Quotient = "<<quotient<<" and Remainder = "<<remainder<<endl;
+
+
+    return;
+}
+ 
+// Driver Code
+int main()
+{
+    // Given two number
+    int dividend = 45, divisor = 7;
+ 
+    // Function call
+    findQuotientAndRemainder(dividend , divisor );
+    findQuotientAndRemainder(7, 3);
+    return 0;
+}
