@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+
+class Base
+{
+    private:int num1;
+    protected:int num2;
+    public:int num3;
+    void basevalue()
+    {
+        cout << "\n Enter private data of a base class : ";
+        cin >> num1;
+        cout << "\n Enter protected data of a base class : ";
+        cin >> num2;
+        cout << "\n Enter public data of a base class : ";
+        cin >> num3;
+    }
+};
+class Derived:private Base
+{
+    public:int x;
+    void derivedvalue()
+    {
+        basevalue();
+        cout << "\n Enter a Derived value : ";
+        cin >> x;
+    }
+    void plus()
+    {
+        int sum;
+        sum=num2+num3+x;
+        cout << "\n Addition of Base and derived data : " << sum;
+    }
+};
+int main()
+{
+    Base B;
+    B.basevalue();
+    Derived D;
+    D.derivedvalue();
+    D.plus();
+
+    return 0;
+}
