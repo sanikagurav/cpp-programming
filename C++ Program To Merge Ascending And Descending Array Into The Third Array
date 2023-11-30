@@ -1,0 +1,63 @@
+#include <iostream>
+#include<string.h>
+#include<cstdlib>
+using namespace std;
+int main ()
+{
+ int s1,s2,a[100],b[100],c[200],i,j,k;
+
+ cout<<"Enter the size of Array 1\n\n";
+ cin>>s1;
+
+ cout<<"Enter the first Element of array\n\n";
+ 
+ for(i=0;i<s1;i++)
+ {
+   cin>>a[i];
+ }
+
+ cout<<"Enter the size of Array 2\n\n";
+ cin>>s2;
+
+ cout<<"Enter the Second Element of array\n\n";
+
+ for(i=0;i<s2;i++)
+ {
+   cin>>b[i];
+ }
+
+ cout<<"Merge array Are Given Below\n\n";
+
+ i=0;j=0;k=0;
+ 
+ while(i<s1 && j<s2)
+ {
+   if(a[i]<b[j])
+   {
+    c[k++]=a[i++];
+  }
+   else
+   {
+    c[k++]=b[j++];
+  }
+ }
+ if(i>=s1)
+ {
+   while(j<s2)
+   {
+    c[k++]=b[j++];
+  }
+ }
+ else if(j>=s2)
+ {
+  while(i<s1)
+   {
+    c[k++]=a[i++];
+  }
+ }
+ for(i=0;i<s1+s2;i++)
+ {
+   cout<<c[i]<<" ";
+ }
+ return 0;
+}
