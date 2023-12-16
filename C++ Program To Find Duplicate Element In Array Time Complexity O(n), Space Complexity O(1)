@@ -1,0 +1,41 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+void repeated_element(int a[],int size)
+ {
+    int i,count=0;
+
+    cout<<"Repeating Element Are : ";
+
+    for(i=0;i<size;i++)
+    {
+     if(a[abs(a[i])]>0)
+      a[abs(a[i])]=-a[abs(a[i])];
+    else if(a[abs(a[i])]==0)
+     count++;
+    else
+     cout<<" "<<abs(a[i]);  
+    }
+
+    if(count>1)
+        cout<<" "<<count;
+} 
+
+int main()
+{
+ int n,i,a[20];
+ 
+ cout<<"Enter The Size Of Array\n";
+ cin>>n;
+ 
+ cout<<"Enter The Element Of Array\n";
+ for(i=0;i<n;i++)
+ {
+  cin>>a[i];
+ }
+ 
+ repeated_element(a,n);
+ 
+ return 0;
+}
