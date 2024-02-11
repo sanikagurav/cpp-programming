@@ -1,0 +1,49 @@
+#include <fstream>
+#include <iostream>
+#include <sstream>
+
+using namespace std;
+//Ghanendra Yadav
+int main()
+{
+   ifstream inFile;
+    char filename[20];
+ 
+ cout<<"Enter The File Name With Extension\n";
+ cin>>filename;
+ 
+ inFile.open(filename);
+ 
+ /*Here You Have To Create A File And put some data on it. 
+Then Save the with Any Extension With File Name As Above Shown */
+   
+ if (!inFile)
+   {
+    cerr << "File example.txt not found." << endl;
+    return -1;
+   }
+  
+   ofstream outFile("sum.txt");
+   /*Here You Have Sum Of File Line By Line Sum  */
+   string line;
+  
+   while (getline(inFile, line))
+   {
+    if (line.empty()) 
+ continue;
+
+    istringstream iss(line);
+    int sum = 0, next = 0;
+    while (iss >> next) 
+ sum += next;
+    outFile << sum << endl;
+   }
+
+   inFile.close();
+   outFile.close();
+  
+   cout<<"File Created Successfully Go To Sum.txt File And Open\n";
+  
+  return 0;
+
+}
