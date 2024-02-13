@@ -1,0 +1,21 @@
+#include<iostream>
+#include<conio.h>
+#include<dirent.h>
+using namespace std;
+main()
+{
+//Ghanendra Yadav
+ int done, i=1;
+ DIR *dir;
+ dirent *pdir;
+ cout<<"Press any key to list and view all the files in the current directory : \n";
+ getch();
+ dir=opendir(".");
+ while(pdir=readdir(dir))
+ {
+ cout<<i<<"="<<pdir->d_name<<" \n";
+ i++;
+ }
+ closedir(dir);
+ return 0;
+}
